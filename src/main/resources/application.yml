@@ -1,0 +1,30 @@
+server:
+  port: 8091
+
+spring:
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:mem:productDB
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        show-sql: true
+        use-sql-comments: false
+        format-sql: false
+    defer-datasource-initialization: true
+
+logging:
+  pattern:
+    console: "%d{yyyy/MM/dd-HH:mm:ss} ${LOG_LEVEL_PATTERN:-5p} %m%n"
+
